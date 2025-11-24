@@ -2,9 +2,9 @@
 #include <fat.h>
 #include <stdio.h>
 
-#include "main_menu.h"
-#include "save_menu.h"
-#include "slot_system.h"
+#include "menu/main_menu.h"
+#include "menu/save_menu.h"
+#include "core/slot_system.h"
 
 enum GameState {
 	STATE_MAIN_MENU,

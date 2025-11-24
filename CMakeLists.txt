@@ -12,11 +12,11 @@ file(GLOB_RECURSE GAME_SOURCES
 )
 
 add_executable(jdm_ds_racer ${GAME_SOURCES}
-        source/save_data.h
-        source/save_menu.c
-        source/menu.c
-        source/main_menu.h
-        source/save_menu.h)
+        source/core/save_data.h
+        source/menu/save_menu.c
+        source/menu/menu.c
+        source/menu/main_menu.h
+        source/menu/save_menu.h)
 
 # Tell CLion/clangd where libnds headers are
 target_include_directories(jdm_ds_racer PRIVATE
