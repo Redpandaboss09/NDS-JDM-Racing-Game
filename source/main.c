@@ -22,11 +22,20 @@ int main(int argc, char* argv[]) {
 
 	vramSetBankC(VRAM_C_SUB_BG);
 
-	consoleInit(&consoleSub, 0, BgType_Text4bpp, BgSize_T_256x256, 16, 6, false, true);
+	consoleInit(
+		&consoleSub,
+		0,
+		BgType_Text4bpp,
+		BgSize_T_256x256,
+		16,
+		6,
+		false,
+		true
+	);
 	consoleSelect(&consoleSub);
 	consoleSetWindow(&consoleSub, 5, 5, 32, 32);
 
-	enum GameState state = STATE_MENU;
+	enum GameState state = STATE_MAIN_MENU;
 
 	while (state != STATE_EXIT) {
 		switch (state) {
@@ -48,17 +57,17 @@ int main(int argc, char* argv[]) {
 			case STATE_NEW_GAME:
 				// runGame();
 				// for now just go back to menu
-				state = STATE_MENU;
+				state = STATE_MAIN_MENU;
 				break;
 
 			case STATE_LOAD_GAME:
 				// runLoad();
-				state = STATE_MENU;
+				state = STATE_MAIN_MENU;
 				break;
 
 			case STATE_SETTINGS:
 				// runSettings();
-				state = STATE_MENU;
+				state = STATE_MAIN_MENU;
 				break;
 
 			default:
