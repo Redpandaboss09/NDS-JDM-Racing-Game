@@ -16,7 +16,10 @@ add_executable(jdm_ds_racer ${GAME_SOURCES}
         source/menu/save_menu.c
         source/menu/menu.c
         source/menu/main_menu.h
-        source/menu/save_menu.h)
+        source/menu/save_menu.h
+        source/game/car.c
+        source/game/car.h
+        source/core/math_utils.h)
 
 # Tell CLion/clangd where libnds headers are
 target_include_directories(jdm_ds_racer PRIVATE

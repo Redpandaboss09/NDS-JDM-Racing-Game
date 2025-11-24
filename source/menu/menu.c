@@ -4,7 +4,7 @@
 #include <nds.h>
 #include <stdio.h>
 
-#include "../menu.h"
+#include "menu.h"
 
 #include <stdbool.h>
 
