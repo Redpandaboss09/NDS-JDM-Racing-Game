@@ -7,7 +7,7 @@
 
 #include "menu.h"
 
-#define MAIN_MENU_ITEM_COUNT 3
+#define MAIN_MENU_ITEM_COUNT 2
 
 int mainMenu(void);
 

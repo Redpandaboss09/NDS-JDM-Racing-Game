@@ -10,8 +10,9 @@
 #define TOTAL_SLOT_SIZE 65536
 #define SLOT_COUNT 4
 #define SLOT_SIZE_BYTES (TOTAL_SLOT_SIZE / SLOT_COUNT) // Each slot should be 16kb = 16384 bytes
-
 #define MAX_SLOT_NAME_SIZE 32
+
+#define SAVE_MAGIC 0x4A444D21
 
 typedef struct {
     uint32_t magic;
@@ -22,13 +23,18 @@ typedef struct {
 
     SaveData slotData;
 
-    uint8_t padding[SLOT_SIZE_BYTES - (sizeof(uint32_t) + sizeof(uint16_t) + sizeof(uint8_t) + 32 + sizeof(SaveData))];
+    uint8_t padding[SLOT_SIZE_BYTES - (sizeof(uint32_t) + sizeof(uint16_t) + sizeof(uint8_t) + MAX_SLOT_NAME_SIZE +
+        sizeof(SaveData))];
 } SaveSlot;
 
 typedef struct {
     SaveSlot slots[SLOT_COUNT];
 } SlotSystem;
 
-SlotSystem g_slotSystem;
+extern SlotSystem g_slotSystem;
+
+void initSaveSystem();
+void saveSlotToDisk(int slotIndex);
+void wipeSlot(int slotIndex);
 
 #endif //JDM_DS_RACER_SAVE_SYSTEM_H

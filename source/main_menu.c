@@ -3,9 +3,8 @@
 #include "menu.h"
 
 struct MenuItem mainMenuItems[] = {
-    {"New Game", 0},
-    {"Load Game", 1},
-    {"Settings", 2}
+    {"Play", 0},
+    {"Settings", 1}
 };
 
 int mainMenu(void) {
