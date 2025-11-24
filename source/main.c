@@ -1,6 +1,9 @@
 #include <nds.h>
+#include <fat.h>
 #include <stdio.h>
-#include "menu.h"
+
+#include "main_menu.h"
+#include "save_menu.h"
 
 enum GameState {
 	STATE_MAIN_MENU,
@@ -16,6 +19,7 @@ PrintConsole consoleSub;
 
 int main(int argc, char* argv[]) {
 	powerOn(POWER_ALL_2D);
+	fatInitDefault();
 
 	videoSetMode(MODE_0_2D);
 	videoSetModeSub(MODE_0_2D);
@@ -55,9 +59,7 @@ int main(int argc, char* argv[]) {
 			}
 
 			case STATE_NEW_GAME:
-				// runGame();
-				// for now just go back to menu
-				state = STATE_MAIN_MENU;
+				saveSlotsMenu();
 				break;
 
 			case STATE_LOAD_GAME:
